@@ -11,6 +11,7 @@ import {
   updateGameStatusText,
   updatePlayerHeading,
   resetUi,
+  highlightSquares,
 } from './js/dom-functions.js';
 
 updatePlayerHeading(currentPlayer);
@@ -28,6 +29,7 @@ document.querySelectorAll('.cell').forEach((cell, i) => {
       finishGame();
       updateGameStatusText(winner);
       document.querySelector('button').classList.remove('hidden');
+      highlightSquares(winningSquares);
       return;
     }
     switchPlayer();

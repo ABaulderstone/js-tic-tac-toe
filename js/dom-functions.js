@@ -33,4 +33,11 @@ export const resetUi = () => {
   updatePlayerHeading(currentPlayer);
   updateGameStatusText(null);
   document.querySelector('button').classList.add('hidden');
+  highlightSquares([0, 1, 2, 3, 4, 5, 6, 7, 8], 'black');
+};
+
+export const highlightSquares = (arr, color = 'lightgreen') => {
+  arr.forEach(
+    (num) => (document.querySelector('#cell' + num).style.color = color)
+  );
 };
