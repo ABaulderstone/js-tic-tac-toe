@@ -48,7 +48,7 @@ const checkWinner = (board) => {
     return ['draw', []];
   }
   // game still going
-  return null;
+  return [null, null];
 };
 
 export const resetGame = () => {

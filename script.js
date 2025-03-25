@@ -21,12 +21,12 @@ document.querySelectorAll('.cell').forEach((cell, i) => {
     if (gameOver) {
       return;
     }
-    const result = makeMove(i, currentPlayer);
+    const [winner, winningSquares] = makeMove(i, currentPlayer);
     renderBoard(board);
-    console.log(result);
-    if (result) {
+
+    if (winner) {
       finishGame();
-      updateGameStatusText(result[0]);
+      updateGameStatusText(winner);
       document.querySelector('button').classList.remove('hidden');
       return;
     }
